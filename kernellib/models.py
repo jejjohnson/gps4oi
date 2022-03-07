@@ -7,10 +7,10 @@ from gpytorch.priors import SmoothedBoxPrior
 
 def get_exact_gp():
     class GPRegressionModel(gpytorch.models.ExactGP):
-        def __init__(self, train_x, train_y, likelihood):
+        def __init__(self, train_x, train_y, likelihood, ard_num_dims: int=3):
             super(GPRegressionModel, self).__init__(train_x, train_y, likelihood)
             self.mean_module = ConstantMean()
-            self.covar_module = ScaleKernel(RBFKernel(ard_num_dims=3))
+            self.covar_module = ScaleKernel(RBFKernel(ard_num_dims=ard_num_dims))
 
         def forward(self, x):
             mean_x = self.mean_module(x)
@@ -22,10 +22,10 @@ def get_exact_gp():
 
 def get_sparse_gp():
     class GPRegressionModel(gpytorch.models.ExactGP):
-        def __init__(self, train_x, train_y, likelihood, n_inducing_points: int = 500):
+        def __init__(self, train_x, train_y, likelihood, n_inducing_points: int = 500, ard_num_dims: int=3):
             super(GPRegressionModel, self).__init__(train_x, train_y, likelihood)
             self.mean_module = ConstantMean()
-            self.base_covar_module = ScaleKernel(RBFKernel(ard_num_dims=3))
+            self.base_covar_module = ScaleKernel(RBFKernel(ard_num_dims=ard_num_dims))
             self.covar_module = InducingPointKernel(
                 self.base_covar_module,
                 inducing_points=train_x[:n_inducing_points, :],
@@ -42,11 +42,11 @@ def get_sparse_gp():
 
 def get_rff_gp():
     class GPRegressionModel(gpytorch.models.ExactGP):
-        def __init__(self, train_x, train_y, likelihood, num_samples: int = 100):
+        def __init__(self, train_x, train_y, likelihood, num_samples: int = 100, ard_num_dims: int=3):
             super(GPRegressionModel, self).__init__(train_x, train_y, likelihood)
             self.mean_module = ConstantMean(prior=SmoothedBoxPrior(-1e-5, 1e-5))
             self.covar_module = ScaleKernel(
-                RFFKernel(num_samples=num_samples, ard_num_dims=3)
+                RFFKernel(num_samples=num_samples, ard_num_dims=ard_num_dims)
             )
 
         def forward(self, x):
