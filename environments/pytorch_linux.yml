@@ -44,7 +44,7 @@ dependencies:
 # PYTORCH ECOSYSTEM
 - pytorch::pytorch           # tensor library
 - pytorch::torchvision       # pytorch visual library
-- cpuonly::cpuonly
+- pytorch::cpuonly
 # GUI
 - ipykernel
 - conda-forge::tqdm

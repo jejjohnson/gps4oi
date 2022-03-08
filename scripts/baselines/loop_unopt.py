@@ -35,8 +35,10 @@ from kernellib.data import load_data
 
 # TESTING PURPOSES
 smoke_test = True
-SAVE_PATH = "/Volumes/EMANS_HDD/data/2021a_ose/interim"
+SAVE_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/interim"
+RAW_DATA_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/raw/netcdf"
 
+print("Starting Script...")
 
 # CREATE OI GRID
 # OI Grid
@@ -76,8 +78,8 @@ noise = 0.05
 # LOAD OBSERVATIONS
 
 
-file_path = "/Volumes/EMANS_HDD/data/2021a_ose"
-inputs = load_data(file_path)
+print("Loading Observations...")
+inputs = load_data(RAW_DATA_PATH)
 
 if smoke_test:
     inputs = [inputs[0]]
