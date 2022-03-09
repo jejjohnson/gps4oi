@@ -34,7 +34,7 @@ from kernellib.preprocessing import create_oi_grid, correct_lon, add_vtime
 from kernellib.data import load_data
 
 # TESTING PURPOSES
-smoke_test = True
+smoke_test = False
 SAVE_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/interim"
 RAW_DATA_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/raw/netcdf"
 

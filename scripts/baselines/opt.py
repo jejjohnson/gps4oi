@@ -33,9 +33,14 @@ from kernellib.types import GeoData, Dimensions
 from kernellib.preprocessing import create_oi_grid, correct_lon, add_vtime
 from kernellib.data import load_data
 
+print("Starting Script")
+import torch
+print("Cuda:", torch.cuda.is_available())
+
 # TESTING PURPOSES
-smoke_test = True
-SAVE_PATH = "/Volumes/EMANS_HDD/data/2021a_ose/interim"
+smoke_test = False
+SAVE_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/interim"
+RAW_DATA_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/raw/netcdf"
 
 
 # CREATE OI GRID
@@ -76,8 +81,7 @@ noise = 0.05
 # LOAD OBSERVATIONS
 
 
-file_path = "/Volumes/EMANS_HDD/data/2021a_ose"
-inputs = load_data(file_path)
+inputs = load_data(RAW_DATA_PATH)
 
 if smoke_test:
     inputs = [inputs[0]]
@@ -150,17 +154,22 @@ train_x = torch.Tensor(obs_coords)
 train_y = torch.Tensor(obs_data.data)
 
 # subset data
-n_subset = 5_000
+n_subset = 10_000
 if smoke_test and n_subset > train_x.shape[0]:
     print(f"Subsetting the data (smoke test): {train_x.shape[0]} -> {n_subset}")
     seed = 123
     rng = np.random.RandomState(seed)
     ind = rng.choice(np.arange(train_x.shape[0]), size=(n_subset,))
+else:
+    print(f"Subsetting the data (smoke test): {train_x.shape[0]} -> {n_subset}")
+    seed = 123
+    rng = np.random.RandomState(seed)
+    ind = rng.choice(np.arange(train_x.shape[0]), size=(n_subset,))
 
-    train_x = train_x[ind]
-    train_y = train_y[ind]
-    assert train_x.shape[0] == n_subset
-    assert train_y.shape[0] == n_subset
+train_x = train_x[ind]
+train_y = train_y[ind]
+assert train_x.shape[0] == n_subset
+assert train_y.shape[0] == n_subset
 
 # fit gp model
 likelihood = gpytorch.likelihoods.GaussianLikelihood()
