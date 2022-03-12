@@ -1,0 +1,8 @@
+_target_: kernellib.preprocessing.config.create_spatial_coords
+
+lon_min: 295.0 # domain min longitude
+lon_max: 305.0 # domain max longitude
+dx_lon: 0.2 # zonal grid spatial step (in degree)
+lat_min: 33.0 # domain min latitude
+lat_max: 43.0 # domain max latitude
+dx_lat: 0.2 # meridional grid spatial step (in degree)

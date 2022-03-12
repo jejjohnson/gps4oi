@@ -1,0 +1,6 @@
+_target_: kernellib.preprocessing.config.create_temporal_coords
+
+time_min: "2017-01-01"
+time_max: "2017-01-31"
+dt_step: 1
+dt_period: "D"

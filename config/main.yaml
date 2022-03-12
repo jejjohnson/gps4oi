@@ -1,0 +1,30 @@
+defaults:
+  - _self_
+  - aoi: aoi.yaml
+  - experiment: null
+
+# dataset:
+#   raw_path: "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/raw/netcdf"
+#   save_path: "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/interim"
+
+# spatial_aoi:
+#   lon_min: 295.0 # domain min longitude
+#   lon_max: 305.0 # domain max longitude
+#   dx_lon: 0.2 # zonal grid spatial step (in degree)
+#   lat_min: 33.0 # domain min latitude
+#   lat_max: 43.0 # domain max latitude
+#   dx_lat: 0.2 # meridional grid spatial step (in degree)
+
+# temporal_aoi:
+#   time_min: "2017-01-01"
+#   time_max: "2017-01-31"
+#   dt_step: 1
+#   dt_period: "D"
+
+# kernel_params:
+#   Lx: 1.0
+#   Ly: 1.0
+#   Lt: 7.0
+#   noise: 0.05
+
+name: "default"

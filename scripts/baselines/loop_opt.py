@@ -30,14 +30,13 @@ from matplotlib.patches import Rectangle
 
 from tqdm import tqdm, trange
 from kernellib.types import GeoData, Dimensions
-from kernellib.preprocessing import create_oi_grid, correct_lon, add_vtime
+from kernellib.features import create_oi_grid, correct_lon, add_vtime
 from kernellib.data import load_data
 
 # TESTING PURPOSES
 smoke_test = True
 SAVE_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/interim"
 RAW_DATA_PATH = "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/raw/netcdf"
-
 
 
 # CREATE OI GRID

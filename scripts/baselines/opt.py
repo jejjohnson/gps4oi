@@ -30,11 +30,12 @@ from matplotlib.patches import Rectangle
 
 from tqdm import tqdm, trange
 from kernellib.types import GeoData, Dimensions
-from kernellib.preprocessing import create_oi_grid, correct_lon, add_vtime
+from kernellib.features import create_oi_grid, correct_lon, add_vtime
 from kernellib.data import load_data
 
 print("Starting Script")
 import torch
+
 print("Cuda:", torch.cuda.is_available())
 
 # TESTING PURPOSES
@@ -138,7 +139,6 @@ n_batches_pred = 100
 print("Starting Loop")
 
 
-
 obs_data = GeoData(
     lat=ds_obs.latitude.values,
     lon=ds_obs.longitude.values,
@@ -186,7 +186,7 @@ if smoke_test:
     n_iterations = 10
 else:
     n_iterations = 100
-    
+
 losses, model, likelihood = fit_gp_model(
     train_x, train_y, model, likelihood, n_iterations=n_iterations
 )

@@ -30,7 +30,7 @@ from matplotlib.patches import Rectangle
 
 from tqdm import tqdm, trange
 from kernellib.types import GeoData, Dimensions
-from kernellib.preprocessing import create_oi_grid, correct_lon, add_vtime
+from kernellib.features import create_oi_grid, correct_lon, add_vtime
 from kernellib.data import load_data
 
 # TESTING PURPOSES
