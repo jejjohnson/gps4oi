@@ -23,6 +23,7 @@ dependencies:
 - conda-forge::shapely
 - conda-forge::pooch
 - conda-forge::cftime
+- conda-forge::pyinterp
 # - conda-forge::cmip6_preprocessing
 # - affine
 # Scale
@@ -47,6 +48,7 @@ dependencies:
 - pytorch::cudatoolkit=10.2  # cuda libraries
 # GUI
 - ipykernel
+- pyviz::hvplot
 - conda-forge::tqdm
 - pip
 - pip:
@@ -88,3 +90,4 @@ dependencies:
   # plotting
   - celluloid
   - corner
+  - tabulate

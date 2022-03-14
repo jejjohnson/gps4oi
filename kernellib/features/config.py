@@ -1,4 +1,5 @@
 import numpy as np
+from kernellib.types import AOI
 
 
 def _convert_to_time(dt_step, dt_period):
@@ -34,3 +35,27 @@ def create_spatiotemporal_coords(lon_min, lon_max, dx_lon, lat_min, lat_max, dx_
     return glon, glat, gtime
 
 
+
+
+def load_test_aoi():
+    
+    return AOI(
+        lon_min= 295.0,  # domain min longitude,
+        lon_max=305.0,  # domain max longitude,
+        lat_min=33.0,  # domain min latitude,
+        lat_max=43.0,  # domain max latitude,
+        time_min=np.datetime64("2017-01-01"),  # domain min time,
+        time_max=np.datetime64("2017-12-31")  # domain max time
+    )
+    
+def load_smoketest_aoi():
+    
+    return AOI(
+        lon_min= 295.0,  # domain min longitude,
+        lon_max=305.0,  # domain max longitude,
+        lat_min=33.0,  # domain min latitude,
+        lat_max=43.0,  # domain max latitude,
+        time_min=np.datetime64("2017-01-01"),  # domain min time,
+        time_max=np.datetime64("2017-01-31")  # domain max time
+    )
+    

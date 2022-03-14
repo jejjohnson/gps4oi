@@ -56,8 +56,8 @@ if smoke_test:
     time_max = np.datetime64("2017-01-31")  #
 else:
     time_max = np.datetime64("2017-12-31")  # domain max time
-dx = 0.2  # zonal grid spatial step (in degree)
-dy = 0.2  # meridional grid spatial step (in degree)
+dx = 0.05  # zonal grid spatial step (in degree)
+dy = 0.05  # meridional grid spatial step (in degree)
 dt = np.timedelta64(1, "D")  # temporal grid step
 
 if smoke_test:
@@ -154,7 +154,7 @@ train_x = torch.Tensor(obs_coords)
 train_y = torch.Tensor(obs_data.data)
 
 # subset data
-n_subset = 10_000
+n_subset = 25_000
 if smoke_test and n_subset > train_x.shape[0]:
     print(f"Subsetting the data (smoke test): {train_x.shape[0]} -> {n_subset}")
     seed = 123

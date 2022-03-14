@@ -2,7 +2,7 @@
 
 #OAR --name oi_opt
 #OAR --project pr-data-ocean
-#OAR -l /nodes=1,gpu=1
+#OAR -l /nodes=1,gpu=1,walltime=4:00:00
 #OAR --stdout /bettik/johnsonj/logs/gps4oi_opt.log
 #OAR --stderr /bettik/johnsonj/errs/gps4oi_opt.log
 #OAR -e /home/johnsonj/.ssh/id_my_job_key

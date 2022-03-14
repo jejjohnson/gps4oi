@@ -2,7 +2,7 @@
 
 #OAR --name oi_lunopt
 #OAR --project pr-data-ocean
-#OAR -l /nodes=1,gpu=1,walltime=10:00:00
+#OAR -l /nodes=1,gpu=1,walltime=3:00:00
 #OAR --stdout /bettik/johnsonj/logs/gps4oi_loopunopt.log
 #OAR --stderr /bettik/johnsonj/errs/gps4oi_loopunopt.log
 #OAR -e /home/johnsonj/.ssh/id_my_job_key
