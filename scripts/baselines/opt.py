@@ -30,7 +30,7 @@ from matplotlib.patches import Rectangle
 
 from tqdm import tqdm, trange
 from kernellib.types import GeoData, Dimensions
-from kernellib.features import create_oi_grid, correct_lon, add_vtime
+from kernellib.preprocessing import create_oi_grid, correct_lon, add_vtime
 from kernellib.data import load_data
 
 print("Starting Script")
@@ -185,7 +185,7 @@ print("Training GP Model...")
 if smoke_test:
     n_iterations = 10
 else:
-    n_iterations = 100
+    n_iterations = 5_000
 
 losses, model, likelihood = fit_gp_model(
     train_x, train_y, model, likelihood, n_iterations=n_iterations
