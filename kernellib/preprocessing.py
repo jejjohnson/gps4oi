@@ -2,18 +2,27 @@ import xarray as xr
 import numpy as np
 
 
-def create_oi_grid(glon, glat, gtime, n_samples: int = 10):
+def create_oi_grid(aoi, n_samples: int = 10):
     """ """
+
+    # create grids
+    glon = np.arange(aoi.lon_min, aoi.lon_max + aoi.dlon, aoi.dlon)
+    glat = np.arange(
+        aoi.lat_min, aoi.lat_max + aoi.dlat, aoi.dlat
+    )  # output OI latitude grid
+    gtime = np.arange(
+        aoi.time_min, aoi.time_max + aoi.dt, aoi.dt
+    )  # output OI time grid
 
     nx = len(glon)
     ny = len(glat)
     nt = len(gtime)
 
     # define & initialize ssh array
-    gssh_mu = np.empty((nt, ny, nx))
-    gssh_var = np.empty((nt, ny, nx))
-    gssh_samples = np.empty((n_samples, nt, ny, nx))
-    nobs = np.empty(nt)
+    gssh_mu = np.zeros((nt, ny, nx))
+    gssh_var = np.zeros((nt, ny, nx))
+    gssh_samples = np.zeros((n_samples, nt, ny, nx))
+    nobs = np.zeros(nt)
 
     # Make 2D grid
     glon2, glat2 = np.meshgrid(glon, glat)
