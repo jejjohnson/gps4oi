@@ -1,6 +1,6 @@
 import pyinterp
 import numpy as np
-from kernellib.dat.l4 import read_l4_data
+from kernellib.data.l4 import read_l4_data
 from kernellib.features.config import load_test_aoi
 
 def interp_on_alongtrack(gridded_dataset, 

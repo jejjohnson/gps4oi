@@ -1,11 +1,14 @@
-_target_: kernellib.features.config.create_spatiotemporal_coords
-
 lon_min: 295.0 # domain min longitude
-lon_max: 305.0 # domain max longitude
-dx_lon: 0.2 # zonal grid spatial step (in degree)
-lat_min: 33.0 # domain min latitude
-lat_max: 43.0 # domain max latitude
-dx_lat: 0.2 # meridional grid spatial step (in degree)
+# domain max longitude
+lon_max: 305.0 
+# zonal grid spatial step (in degree)
+dlon: 0.2 
+# domain min latitude
+lat_min: 33.0 
+# domain max latitude
+lat_max: 43.0 
+# meridional grid spatial step (in degree)
+dlat: 0.2 
 
 time_min: "2017-01-01"
 time_max: "2017-01-31"

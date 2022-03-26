@@ -1,0 +1,4 @@
+_target_: kernellib.data.io.load_multiple_data
+
+
+filenames: ${../server/train_data_dir}

@@ -1,0 +1,9 @@
+
+train_data_dir: "/home/johnsonj/data/dc_2021/raw/train/*.nc"
+test_data_dir: "/home/johnsonj/data/dc_2021/raw/test/"
+test_data_filename: "dt_gulfstream_c2_phy_l3_20161201-20180131_285-315_23-53.nc"
+ref_data_dir: "/home/johnsonj/data/dc_2021/raw/ref/"
+ref_data_filename: "/home/johnsonj/data/dc_2021/interim"
+results_filename: "OSE_ssh_mapping.nc"
+stats_dir: "/home/johnsonj/data/dc_2021/interim"
+logs_dir: "/mnt/meom/workdir/johnsonj/logs/wandb/gps4oi/"

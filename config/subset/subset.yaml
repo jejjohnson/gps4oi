@@ -1,0 +1,26 @@
+_target_: kernellib.features.aoi.subset_data
+
+# AOI
+# domain min longitude
+lon_min: ${aoi/lon_min}
+# domain max longitude
+lon_max: ${aoi/lon_max} 
+# zonal grid spatial step (in degree)
+dlon: ${aoi/dlon} 
+# domain min latitude
+lat_min: ${aoi/lat_min} 
+# domain max latitude
+lat_max: ${aoi/lat_max} 
+# meridional grid spatial step (in degree)
+dlat: ${aoi/dlat} 
+
+time_min: ${aoi/time_min} 
+time_max: ${aoi/time_max} 
+dt_step: ${aoi/dt_step} 
+dt_period: ${aoi/dt_period} 
+
+# OI PARAMS
+Lt: ${oi/Lt} 
+Lx: ${oi/Lx} 
+Ly: ${oi/Ly} 
+noise: ${oi/noise} 

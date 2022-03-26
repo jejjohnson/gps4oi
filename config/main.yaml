@@ -1,30 +1,71 @@
+# @package _global_
+
 defaults:
   - _self_
-  - aoi: aoi.yaml
+  - server: cal1
+  - dataset: dc_2021
+  - aoi: aoi
   - experiment: null
+  - oi: oi
+  - model: model
+  
+# CREATE OI GRID
+ds_oi_grid: _null_
+oi_grid:
+    _target_: kernellib.features.oi.create_oi_grid
+    # domain min longitude
+    lon_min: ${aoi.lon_min}
+    # domain max longitude
+    lon_max: ${aoi.lon_max} 
+    # zonal grid spatial step (in degree)
+    dlon: ${aoi.dlon} 
+    # domain min latitude
+    lat_min: ${aoi.lat_min} 
+    # domain max latitude
+    lat_max: ${aoi.lat_max} 
+    # meridional grid spatial step (in degree)
+    dlat: ${aoi.dlat} 
 
-# dataset:
-#   raw_path: "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/raw/netcdf"
-#   save_path: "/bettik/johnsonj/data/data_challenges/ssh_mapping_2021/interim"
+    time_min: ${aoi.time_min} 
+    time_max: ${aoi.time_max} 
+    dt_step: ${aoi.dt_step} 
+    dt_period: ${aoi.dt_period} 
 
-# spatial_aoi:
-#   lon_min: 295.0 # domain min longitude
-#   lon_max: 305.0 # domain max longitude
-#   dx_lon: 0.2 # zonal grid spatial step (in degree)
-#   lat_min: 33.0 # domain min latitude
-#   lat_max: 43.0 # domain max latitude
-#   dx_lat: 0.2 # meridional grid spatial step (in degree)
+    
+# LOAD FILES
+load:
+    _target_: kernellib.data.io.load_multiple_data
+    filenames: ${server.train_data_dir}
+  
+# SUBSET DATA
+subset:
+    _target_: kernellib.features.aoi.subset_data
+    # AOI
+    # domain min longitude
+    lon_min: ${aoi.lon_min}
+    # domain max longitude
+    lon_max: ${aoi.lon_max} 
+    # zonal grid spatial step (in degree)
+    dlon: ${aoi.dlon} 
+    # domain min latitude
+    lat_min: ${aoi.lat_min} 
+    # domain max latitude
+    lat_max: ${aoi.lat_max} 
+    # meridional grid spatial step (in degree)
+    dlat: ${aoi.dlat} 
 
-# temporal_aoi:
-#   time_min: "2017-01-01"
-#   time_max: "2017-01-31"
-#   dt_step: 1
-#   dt_period: "D"
+    time_min: ${aoi.time_min} 
+    time_max: ${aoi.time_max} 
+    dt_step: ${aoi.dt_step} 
+    dt_period: ${aoi.dt_period} 
 
-# kernel_params:
-#   Lx: 1.0
-#   Ly: 1.0
-#   Lt: 7.0
-#   noise: 0.05
+    # OI PARAMS
+    Lt: ${oi/Lt} 
+    Lx: ${oi/Lx} 
+    Ly: ${oi/Ly} 
+    noise: ${oi/noise} 
+
 
 name: "default"
+project: "gps4oi"
+entity: "ige"

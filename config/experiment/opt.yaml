@@ -1,7 +1,0 @@
-# @package _global_
-
-defaults:
-  - override /aoi: smoketest.yaml
-
-
-name: "opt_sm"
