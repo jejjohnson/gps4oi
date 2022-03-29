@@ -4,13 +4,13 @@ lon_min: 295.0
 # domain max longitude
 lon_max: 305.0 
 # zonal grid spatial step (in degree)
-dlon: 0.05 
+dlon: 0.2 
 # domain min latitude
 lat_min: 33.0 
 # domain max latitude
 lat_max: 43.0 
 # meridional grid spatial step (in degree)
-dlat: 0.05 
+dlat: 0.2 
 
 time_min: "2017-01-01"
 time_max: "2017-12-31"
