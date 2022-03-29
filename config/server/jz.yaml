@@ -8,3 +8,4 @@ results_dir: "/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_m
 results_filename: "OSE_ssh_mapping.nc"
 stats_dir: "/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/interim"
 logs_dir: "/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/logs/"
+name: "jeanzay"

@@ -1,3 +1,4 @@
+import os
 import torch
 import wandb
 import numpy as np
@@ -27,6 +28,9 @@ def run_baseline_pipeline(config):
 
     **Save Results
     """
+    if config.server.name == "jeanzay":
+        os.environ["WANDB_MODE"] = "offline"
+
     wandb.init(
         project=config.project,
         entity=config.entity,
