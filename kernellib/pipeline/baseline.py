@@ -73,7 +73,7 @@ def run_baseline_pipeline(config):
         train_x = torch.Tensor(obs_coords)
         train_y = torch.Tensor(obs_data.data)
 
-        if config.aoi.smoketest is not None:
+        if config.aoi.smoketest is not False:
             print("Subsetting data!")
             train_x = train_x[:1000]
             train_y = train_y[:1000]
@@ -115,7 +115,7 @@ def run_baseline_pipeline(config):
         )
         ds_oi_grid.nobs[i_time] = n_obs
 
-        if config.aoi.smoketest is not None:
+        if config.aoi.smoketest is not False:
             break
 
     nrmse, nrmse_std, psds_score = run_results_pipeline(ds_oi_grid, config, wandb)
