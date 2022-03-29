@@ -1,5 +1,5 @@
 
-train_data_dir: "/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/*.nc"
+train_data_dir: "/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/train/*.nc"
 test_data_dir: "/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/test/"
 test_data_filename: "dt_gulfstream_c2_phy_l3_20161201-20180131_285-315_23-53.nc"
 ref_data_dir: "/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/ref/"
