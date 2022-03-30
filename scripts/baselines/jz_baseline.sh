@@ -6,7 +6,7 @@
 #SBATCH --nodes=1                    # we request one node
 #SBATCH --ntasks-per-node=1          # with one task per node (= number of GPUs here)
 #SBATCH --gres=gpu:1                 # number of GPUs (1/4 of GPUs)
-#SBATCH --partition="v100-16g"          # GPU Partition (16GB)
+#SBATCH -C v100-32g          # GPU Partition (32GB)
 #SBATCH --cpus-per-task=10           # number of cores per task (1/4 of the 4-GPUs node)
 #SBATCH --hint=nomultithread         # hyperthreading is deactivated
 #SBATCH --time=10:00:00              # maximum execution time requested (HH:MM:SS)
@@ -32,4 +32,4 @@ source activate jlab
 # go to appropriate directory
 cd /linkhome/rech/genige01/uvo53rl/projects/gps4oi
  
-python -u scripts/main aoi=smoketest server=jz experiment=baseline model.kernels.kernel_fn="rbf"
+srun python -u scripts/main aoi=smoketest server=jz experiment=baseline model.kernels.kernel_fn="rbf"
