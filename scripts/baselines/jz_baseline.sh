@@ -6,7 +6,7 @@
 #SBATCH --nodes=1                    # we request one node
 #SBATCH --ntasks-per-node=1          # with one task per node (= number of GPUs here)
 #SBATCH --gres=gpu:1                 # number of GPUs (1/4 of GPUs)
-#SBATCH --partition=gpu_p1          # GPU Partition (16GB)
+#SBATCH --partition="v100-16g"          # GPU Partition (16GB)
 #SBATCH --cpus-per-task=10           # number of cores per task (1/4 of the 4-GPUs node)
 #SBATCH --hint=nomultithread         # hyperthreading is deactivated
 #SBATCH --time=10:00:00              # maximum execution time requested (HH:MM:SS)
