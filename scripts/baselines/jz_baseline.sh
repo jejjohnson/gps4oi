@@ -30,6 +30,8 @@ module load cuda/10.2
 source activate jlab
 
 # go to appropriate directory
-cd /gpfsdswork/projects/rech/cli/uvo53rl/projects/gps4oi
+cd ${WORK}/projects/gps4oi
+export PYTHONPATH=${WORK}/projects/gps4oi:${PYTHONPATH}
+
  
 srun python -u scripts/main aoi=smoketest server=jz experiment=baseline model.kernels.kernel_fn="rbf"
