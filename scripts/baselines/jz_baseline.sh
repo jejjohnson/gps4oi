@@ -27,7 +27,7 @@ module load git
 module load cuda/10.2
 
 # activate conda environment
-source activate jlab
+source activate oi_torch_gpu_py39
 
 # go to appropriate directory
 cd ${WORK}/projects/gps4oi
