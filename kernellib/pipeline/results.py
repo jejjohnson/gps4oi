@@ -41,6 +41,9 @@ def run_results_pipeline(ds_oi, config, wandb_logger=None):
     )
     ds_oi = reformat_oi_output(ds_oi, ref_ds)
 
+    print("Saving results...")
+    ds_oi.to_netcdf(results_dir.joinpath(f"{config.server.results_filename}"))
+
     # load test data
     print("opening test dataset...")
     ds_along_track = read_l3_data(
