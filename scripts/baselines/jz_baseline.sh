@@ -9,7 +9,7 @@
 #SBATCH -C v100-32g          # GPU Partition (32GB)
 #SBATCH --cpus-per-task=10           # number of cores per task (1/4 of the 4-GPUs node)
 #SBATCH --hint=nomultithread         # hyperthreading is deactivated
-#SBATCH --time=10:00:00              # maximum execution time requested (HH:MM:SS)
+#SBATCH --time=24:00:00              # maximum execution time requested (HH:MM:SS)
 #SBATCH --output=/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/logs/slurm/baseline_oi_gpu%j.out    # name of output file
 #SBATCH --error=/linkhome/rech/genige01/uvo53rl/workdir/data/data_challenges/ssh_mapping_2021/logs/slurm/baseline_oi_gpu%j.err     # name of error file (here, in common with the output file)
 
