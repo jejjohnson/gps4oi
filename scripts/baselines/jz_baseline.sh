@@ -35,5 +35,5 @@ export PYTHONPATH=${WORK}/projects/gps4oi:${PYTHONPATH}
 
  
 # srun python -u scripts/main.py server=jz experiment=baseline model.kernel.kernel_fn="rbf"
-srun python -u scripts/main.py server=jz experiment=baseline model.kernel.kernel_fn="matern52"
-
+# srun python -u scripts/main.py server=jz experiment=baseline model.kernel.kernel_fn="matern52"
+srun python -u scripts/main.py aoi.dlon=0.1 aoi.dlat=0.1 server=jz experiment=baseline model.kernel.kernel_fn="matern52"
