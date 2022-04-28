@@ -1,4 +1,8 @@
 from dataclasses import dataclass
+from pathlib import Path
+
+def get_all_files(dir_name, ext: str="*.nc"):
+    return list(Path(dir_name).rglob("*.nc"))
 
 
 

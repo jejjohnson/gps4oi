@@ -1,0 +1,18 @@
+model: "grid"
+n_gridpoints: 100
+mean_fn: "constant"
+scale: True
+n_batches_pred: 100
+likelihood: 
+    likelihood: "gaussian"
+    noise: 0.05
+kernel:
+    kernel_fn: "matern52"
+    lon_kernel: "matern52"
+    lat_kernel: "matern52"
+    temporal_kernel: "matern52"
+    lon_lengthscale: 1.0
+    lat_lengthscale: 1.0
+    temporal_lengthscale: 7.0
+    
+    

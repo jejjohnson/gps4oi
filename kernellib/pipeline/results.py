@@ -27,7 +27,7 @@ def run_results_pipeline(ds_oi, config, wandb_logger=None):
         id = wandb_logger.util.generate_id()
         results_dir = Path(config.server.results_dir).joinpath(f"{id}")
 
-        wandb_logger.log({"data_id": id})
+        wandb_logger.log({"run_id": id})
     else:
         results_dir = Path(config.server.results_dir)
 

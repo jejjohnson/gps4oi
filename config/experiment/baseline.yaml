@@ -1,4 +1,4 @@
 # @package _global_
 
-name: "no_opt"
-
+name: "baseline"
+exp_type: "loop_noopt"

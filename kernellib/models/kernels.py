@@ -40,7 +40,7 @@ def kernel_fn_factory(kernel_fn, params):
             params.lon_lengthscale
         ]
     
-        return kernel
+        return ScaleKernel(kernel)
     
     elif kernel_fn == "matern12":
         # all kernels the same
@@ -51,7 +51,7 @@ def kernel_fn_factory(kernel_fn, params):
             params.lon_lengthscale
         ]
     
-        return kernel
+        return ScaleKernel(kernel)
     
     elif kernel_fn == "matern32":
         kernel = MaternKernel(nu=1.5, ard_num_dims=3)
@@ -61,7 +61,7 @@ def kernel_fn_factory(kernel_fn, params):
             params.lon_lengthscale
         ]
     
-        return kernel
+        return ScaleKernel(kernel)
     
     elif kernel_fn == "matern52":
         kernel = MaternKernel(nu=2.5, ard_num_dims=3)
@@ -71,7 +71,7 @@ def kernel_fn_factory(kernel_fn, params):
             params.lon_lengthscale
         ]
     
-        return kernel
+        return ScaleKernel(kernel)
     
     elif kernel_fn == "mixture":
         return NotImplementedError()

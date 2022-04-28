@@ -15,3 +15,4 @@ time_max: "2017-01-31"
 dt_step: 1
 dt_period: "D"
 smoketest: _null_
+n_subset: 1000

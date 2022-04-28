@@ -13,4 +13,5 @@ kernel:
     lon_lengthscale: 1.0
     lat_lengthscale: 1.0
     temporal_lengthscale: 7.0
+    n_inducing: 100
     
