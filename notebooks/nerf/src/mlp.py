@@ -1,4 +1,4 @@
-from typing import Callable, List
+from typing import Callable, List, Optional
 import jax
 import jax.random as jrandom
 import equinox as eqx
@@ -17,6 +17,21 @@ class Swish(eqx.Module):
     def __call__(self, x):
         return x * jax.nn.sigmoid(self.beta * x)
     
+    
+class MLP(eqx.Module):
+    linear : eqx.Module
+    activation : eqx.Module
+    
+    def __init__(self, in_dim, out_dim, key, activation: Optional[eqx.Module]=ReLU()):
+        
+        self.linear = eqx.nn.Linear(in_dim, out_dim, key=key)
+        self.activation = activation if not None else eqx.nn.Identity()
+        
+    def __call__(self, x):
+        x = self.linear(x)
+        x = self.activation(x)
+        return x
+        
     
     
 class MLPNet(eqx.Module):

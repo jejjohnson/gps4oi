@@ -16,11 +16,14 @@ def aoi_factory(aoi: str):
 class AOIParams:
     lon_min = 295.0  # domain min longitude
     lon_max = 305.0  # domain max longitude
+    lon_ext = 0.0
     lat_min = 33.0  # domain min latitude
     lat_max = 43.0  # domain max latitude
+    lat_ext = 0.0
     time_min = np.datetime64("2017-01-01")  # domain min time
     # time_max = np.datetime64("2017-01-15")
     time_max = np.datetime64("2017-12-31")
+    time_ext = 0.0
     dlon = 0.2  # zonal grid spatial step (in degree)
     dlat = 0.2  # meridional grid spatial step (in degree)
     dt = np.timedelta64(1, "D")  # temporal grid step
