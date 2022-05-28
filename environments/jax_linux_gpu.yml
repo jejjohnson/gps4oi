@@ -1,0 +1,80 @@
+name: jax_gpu_py39
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python=3.9
+# Standard Libraries
+- numpy             # Numerical Linear Algebra
+- scipy             # Scientific Computing
+- xarray            # Data structures
+- pandas            # Data structure
+- scikit-learn      # Machine Learning
+- scikit-image      # Image Processing
+- statsmodels       # Statistical Learning
+- pymc3             # Probabilistic programming library
+# Plotting
+- matplotlib
+- seaborn
+- bokeh
+- plotly::plotly>=4.6.0
+- pyviz::geoviews
+- conda-forge::cartopy
+- datashader
+# Geospatial packages
+- geopandas
+- conda-forge::regionmask
+# - conda-forge::esmf
+# - conda-forge::esmpy
+- conda-forge::xesmf
+- conda-forge::xcube
+- conda-forge::rioxarray
+- conda-forge::shapely
+- conda-forge::pooch
+- conda-forge::cftime
+- conda-forge::pyinterp
+# Scale
+- cython
+- numba
+- dask              # Out-of-Core processing
+- dask-ml           # Out-of-Core machine learning
+# GUI
+- conda-forge::ipywidgets
+- ipykernel
+- conda-forge::tqdm
+- pip
+- pip:
+  # TENSORFLOW
+  - tfds-nightly
+  - tfp-nightly[jax]
+  # Jax framework
+  - "jax[cuda] -f https://storage.googleapis.com/jax-releases/jax_releases.html"
+  - distrax
+  - chex
+  - optax
+  - edward2[jax]
+  - equinox
+  - diffrax
+  - elegy
+  - objax
+  - bayesnewton
+  - einops
+  - dm-pix
+  - flax
+  - dm-haiku
+  - numpyro
+  # formatting
+  - black
+  - pylint
+  - isort
+  - flake8
+  - mypy
+  - pytest
+  # Notebook stuff
+  - pyprojroot
+  # logging
+  - wandb
+  - loguru
+  # plotting
+  - celluloid
+  - corner
