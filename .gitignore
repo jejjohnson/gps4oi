@@ -136,3 +136,7 @@ outputs/*
 \wandb/
 *.gif
 *.mp4
+*.png
+*.nc
+*.pickle
+*.pkl
