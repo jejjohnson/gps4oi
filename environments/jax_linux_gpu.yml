@@ -13,14 +13,6 @@ dependencies:
 - scikit-image      # Image Processing
 - statsmodels       # Statistical Learning
 - pymc3             # Probabilistic programming library
-# Plotting
-- matplotlib
-- seaborn
-- bokeh
-- plotly::plotly>=4.6.0
-- pyviz::geoviews
-- conda-forge::cartopy
-- datashader
 # Geospatial packages
 - geopandas
 - conda-forge::regionmask
@@ -33,6 +25,17 @@ dependencies:
 - conda-forge::pooch
 - conda-forge::cftime
 - conda-forge::pyinterp
+# Plotting
+- matplotlib
+- seaborn
+- bokeh
+- plotly::plotly>=4.6.0
+- pyviz::geoviews
+- pyviz::hvplot
+- conda-forge::cartopy
+- datashader
+- conda-forge::xmovie
+- conda-forge::ffmpeg
 # Scale
 - cython
 - numba
@@ -45,8 +48,11 @@ dependencies:
 - pip
 - pip:
   # TENSORFLOW
+  - tensorflow
   - tfds-nightly
   - tfp-nightly[jax]
+  - gpflow
+  - gpflux
   # Jax framework
   - "jax[cuda] -f https://storage.googleapis.com/jax-releases/jax_releases.html"
   - distrax

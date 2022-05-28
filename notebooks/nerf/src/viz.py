@@ -9,7 +9,7 @@ def create_movie(var, name, framedim: str="steps", cmap: str="RdBu_r", **kwargs)
     
     mov = Movie(var, framedim=framedim, cmap=cmap, **kwargs)
     mov.save(
-        f'plots/movie_{name}.gif',
+        f'movie_{name}.gif',
         remove_movie=False,
         progress=True,
         framerate=5,
